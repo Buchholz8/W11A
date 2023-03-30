@@ -19,6 +19,7 @@ let choices = [
 ]
     //i then made a function to set a cookie named `selection` to record the funtion, i am a little confused on the getAttribute part and i think its the reason this wont work 
 function Sport_sel(details){
+    //this getAttribute doesnt work as intended, i can tget it to read the actualy button text it jsut says the id name
     Cookies.set(`Selection` , details[`target`].getAttribute(`id`));
 }
 //i let a value be equal to a class of all the buttons
