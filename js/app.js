@@ -1,5 +1,10 @@
+    //i then made a function to set a cookie named `selection` to record the funtion, i am a little confused on the getAttribute part and i think its the reason this wont work 
+
+function Sport_sel(details){
+    Cookies.set(`Selection` , details[`target`].getAttribute(`name`));
+}
 //here i made a object containing a name, description, and img_url
-let choices = [
+let details = [
     {
         name: `Hockey`,
         description: `a fast contact sport played on an ice rink between two teams of six skaters, who attempt to drive a small rubber disk (the puck) into the opposing goal with hooked or angled sticks. `,
@@ -16,13 +21,12 @@ let choices = [
         img_url: `/images/diagram-of-hockey-positions_2_.webp`,
     }
 ]
-function Sport_sel(details){
-    Cookies.set(`Selection` , details[`target`].getAttribute(`choices`));
-}
+//i let a value be equal to a class of all the buttons
 let Sport_buttons = document.querySelectorAll(`.options`)
+//i then loop through all 4 buttons and add an event listenerlistening for a click to assign it a cookie
 for(let i=0 ; i <Sport_buttons.length ; i++){
     Sport_buttons[i].addEventListener(`click` , Sport_sel)
 }
-
+//i let json.stringify the for loop and save it as `choices_json`
 let choices_json = JSON.stringify(choices);
 Cookies.set(`choices`, choices_json);
